@@ -3,11 +3,10 @@ from playwright.sync_api import sync_playwright
 import os
 from tenacity import retry, stop_after_attempt, wait_fixed
 
-# Local directory
+
 save_dir = "./data/active_travel/"
 os.makedirs(save_dir, exist_ok=True)
 
-# Retry decorator for downloading
 @retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def download_file(url, path):
     try:
@@ -22,7 +21,6 @@ def download_file(url, path):
         print(f"Failed: {url} - {e}")
         return False
 
-# Scrape table for CSV links using Playwright
 def get_csv_urls():
     csv_urls = []
     with sync_playwright() as p:
@@ -30,9 +28,8 @@ def get_csv_urls():
         page = browser.new_page()
         print(f"Navigating to https://cycling.data.tfl.gov.uk/...")
         page.goto("https://cycling.data.tfl.gov.uk/", timeout=60000)
-        page.wait_for_load_state("networkidle")  # Wait for JS to load
+        page.wait_for_load_state("networkidle") 
         
-        # Find all tables
         tables = page.query_selector_all("table")
         if not tables:
             print("No tables found on the page.")
@@ -41,19 +38,15 @@ def get_csv_urls():
         
         print(f"Found {len(tables)} tables. Searching for CSV links...")
         
-        # Iterate through tables
         for table in tables:
-            # Find all rows
             rows = table.query_selector_all("tr")
             for row in rows:
-                # Look for <a> tags
                 link = row.query_selector("a")
                 if link:
                     href = link.get_attribute("href")
                     if href:
                         full_url = href if href.startswith("http") else f"https://cycling.data.tfl.gov.uk{href}"
                         print(f"Found link: {full_url}")
-                        # Filter for ActiveTravelCountsProgramme and .csv
                         if ("activetravelcountsprogramme" in full_url.lower() and 
                             full_url.lower().endswith(".csv")):
                             csv_urls.append(full_url)
@@ -61,7 +54,6 @@ def get_csv_urls():
         browser.close()
     return csv_urls
 
-# Extract CSV URLs
 print("Scraping https://cycling.data.tfl.gov.uk/ for ActiveTravelCountsProgramme CSVs...")
 csv_urls = get_csv_urls()
 if not csv_urls:
@@ -74,9 +66,8 @@ else:
     for url in csv_urls:
         print(url)
 
-# Download CSVs
 for url in csv_urls:
-    filename = url.split("/")[-1].replace("%20", "_")  # Replace spaces with underscores
+    filename = url.split("/")[-1].replace("%20", "_")
     file_path = os.path.join(save_dir, filename)
     download_file(url, file_path)
 
