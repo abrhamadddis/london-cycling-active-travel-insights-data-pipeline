@@ -1,0 +1,6 @@
+/data
+.env
+/node_modules
+.venv/
+/.venv
+/myenv
