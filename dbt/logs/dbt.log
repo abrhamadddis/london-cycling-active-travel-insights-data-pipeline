@@ -1,0 +1,32 @@
+[0m09:57:26.319689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c0cfb0b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c0b5ee70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c0b5d280>]}
+
+
+============================== 09:57:26.325779 | 7656c4d1-0461-4b53-b8e9-b2c61a927ca4 ==============================
+[0m09:57:26.325779 [info ] [MainThread]: Running with dbt=1.9.4
+[0m09:57:26.326547 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/abrham/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init london_cycling_dbt', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:57:26.335850 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'PosixPath'.. Dictionary: {'dir': PosixPath('/home/abrham/.dbt')}
+[0m09:57:26.336685 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m09:57:26.339394 [debug] [MainThread]: Starter project path: /home/abrham/Desktop/Datatalks/capstone project /london-cycling-active-travel-insights-data-pipeline/myenv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m09:57:26.343439 [info ] [MainThread]: 
+Your new dbt project "london_cycling_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m09:57:26.344214 [info ] [MainThread]: Setting up your profile.
+[0m10:04:49.261067 [info ] [MainThread]: Profile london_cycling_dbt written to /home/abrham/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m10:04:49.262818 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 443.0196, "process_in_blocks": "0", "process_kernel_time": 0.34035, "process_mem_max_rss": "208016", "process_out_blocks": "80", "process_user_time": 2.775548}
+[0m10:04:49.263573 [debug] [MainThread]: Command `dbt init` succeeded at 10:04:49.263416 after 443.02 seconds
+[0m10:04:49.264158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9a648d280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9a654d160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c06b7f80>]}
+[0m10:04:49.264817 [debug] [MainThread]: Flushing usage events
+[0m10:04:50.641192 [debug] [MainThread]: An error was encountered while trying to flush usage events
