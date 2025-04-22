@@ -1,0 +1,77 @@
+
+version: 2
+
+sources:
+  - name: raw_data
+    database: calm-armor-443511-g8
+    schema: cycle_dataset
+    tables:
+      - name: raw_cycle_data
+        description: Raw cycling data for London, including trip counts by site, time, and conditions
+        columns:
+          - name: wave
+            description: Survey wave or batch identifier
+          - name: site_id
+            description: Unique identifier for the cycling site
+          - name: date
+            description: Date of the cycling observation (in STRING format)
+          - name: weather
+            description: Weather conditions during the observation
+          - name: time
+            description: Time of the observation (in STRING format)
+          - name: day
+            description: Day of the week of the observation
+          - name: round
+            description: Observation round (e.g., morning, evening)
+          - name: direction
+            description: Direction of travel (e.g., inbound, outbound)
+          - name: path
+            description: Path type or distance metric (in FLOAT)
+          - name: mode
+            description: Mode of travel (e.g., bicycle, pedestrian)
+          - name: count
+            description: Number of trips or observations recorded
+      - name: monitoring_locations
+        description: Monitoring site metadata, including location and geographic details
+        columns:
+          - name: site_id
+            description: Unique identifier for the monitoring site
+          - name: location_description
+            description: Description of the monitoring site location
+          - name: borough
+            description: Borough where the site is located
+          - name: functional_area
+            description: Functional area classification (e.g., 03 Outer)
+          - name: road_type
+            description: Type of road (integer code)
+          - name: strategic_panel
+            description: Strategic panel identifier (integer)
+          - name: old_site_id
+            description: Legacy site identifier
+          - name: easting_uk_grid
+            description: Easting coordinate in UK grid system
+          - name: northing_uk_grid
+            description: Northing coordinate in UK grid system
+          - name: latitude
+            description: Latitude of the site
+          - name: longitude
+            description: Longitude of the site
+
+# models:
+#   - name: my_first_dbt_model
+#     description: "A starter dbt model"
+#     columns:
+#       - name: id
+#         description: "The primary key for this table"
+#         data_tests:
+#           - unique
+#           - not_null
+
+#   - name: my_second_dbt_model
+#     description: "A starter dbt model"
+#     columns:
+#       - name: id
+#         description: "The primary key for this table"
+#         data_tests:
+#           - unique
+#           - not_null
