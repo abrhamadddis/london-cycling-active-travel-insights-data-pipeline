@@ -1,4 +1,3 @@
-
 version: 2
 
 sources:
@@ -57,21 +56,97 @@ sources:
           - name: longitude
             description: Longitude of the site
 
-# models:
-#   - name: my_first_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
+models:
+  - name: stg_cycle_data
+    description: Staging model for raw cycling data, with date and time combined into a timestamp
+    columns:
+      - name: wave
+        description: The wave or season of the count (e.g., "2014 Q1 (Jan-Mar)")
+      - name: site_id
+        description: Unique ID for the monitoring location (e.g., "ML0001")
+        tests:
+          - not_null
+      - name: date_time
+        description: Timestamp of the count (e.g., "2014-01-24 06:00:00")
+      - name: weather
+        description: Weather conditions during the count (e.g., "Dry")
+      - name: day
+        description: Whether the count was on a weekday or weekend (e.g., "Weekday")
+      - name: round
+        description: Identifies repeated counts at the same location in the same wave (e.g., "A")
+      - name: direction
+        description: Direction of travel (e.g., "Northbound")
+      - name: mode
+        description: Type of road user counted (e.g., "Private cycles")
+      - name: count
+        description: Number of people counted in a 15-minute slot (e.g., 0, 15, 35)
 
-#   - name: my_second_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
+  - name: stg_monitoring
+    description: Staging model for monitoring locations, excluding geographic coordinates
+    columns:
+      - name: site_id
+        description: Unique ID for each location (e.g., "ML1844")
+        tests:
+          - not_null
+      - name: location_description
+        description: Human-readable description of the place (e.g., "Wakering Road")
+      - name: borough
+        description: London borough where the site is located (e.g., "Barking & Dagenham")
+      - name: functional_area
+        description: Region classification Central, Inner, or Outer London (e.g., "03 Outer")
+      - name: road_type
+        description: Type of road (e.g., 0; integer code for A road, B road, etc.)
+      - name: strategic_panel
+        description: Flag (1 or 0) indicating if the site is part of TfL’s official panel
+      - name: old_site_id
+        description: Former ID of the site (e.g., "CFRCY014")
+      - name: easting_uk_grid
+        description: Easting coordinate in UK grid system (e.g., 544446.0)
+
+  - name: fct_cycling_counts
+    description: Fact table for cycling counts analytics, combining cycle data with monitoring site metadata
+    columns:
+      - name: record_id
+        description: Unique surrogate key for each row (UUID)
+        tests:
+          - not_null
+      - name: site_id
+        description: Unique ID for the monitoring location (e.g., "ML0001")
+        tests:
+          - not_null
+      - name: wave
+        description: Wave or season of the count (e.g., "2014 Q1 (Jan-Mar)")
+      - name: date_time
+        description: Timestamp of the count (e.g., "2014-01-24 06:00:00")
+        tests:
+          - not_null
+      - name: year
+        description: Year extracted from date_time (e.g., 2014)
+      - name: month
+        description: Month extracted from date_time (e.g., 1)
+      - name: day_of_week
+        description: Day of week extracted from date_time (e.g., 6 for Friday)
+      - name: hour
+        description: Hour extracted from date_time (e.g., 6)
+      - name: weather
+        description: Weather conditions during the count (e.g., "Dry")
+      - name: day
+        description: Whether the count was on a weekday or weekend (e.g., "Weekday")
+      - name: round
+        description: Identifies repeated counts at the same location in the same wave (e.g., "A")
+      - name: direction
+        description: Direction of travel (e.g., "Northbound")
+      - name: mode
+        description: Type of road user counted (e.g., "Private cycles")
+      - name: count
+        description: Number of people counted in a 15-minute slot (e.g., 0, 15, 35)
+      - name: location_description
+        description: Human-readable description of the place (e.g., "Wakering Road")
+      - name: borough
+        description: London borough where the site is located (e.g., "Barking & Dagenham")
+      - name: functional_area
+        description: Region classification Central, Inner, or Outer London (e.g., "03 Outer")
+      - name: road_type
+        description: Type of road (e.g., 0; integer code for A road, B road Dijkstra, etc.)
+      - name: strategic_panel
+        description: Flag (1 or 0) indicating if the site is part of TfL’s official panel
