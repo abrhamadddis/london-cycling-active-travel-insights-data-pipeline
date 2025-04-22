@@ -1,14 +1,12 @@
-[0m09:57:26.319689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c0cfb0b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c0b5ee70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c0b5d280>]}
+[0m14:27:17.512303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388fef1ff50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388fe6da150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388fe6d93d0>]}
 
 
-============================== 09:57:26.325779 | 7656c4d1-0461-4b53-b8e9-b2c61a927ca4 ==============================
-[0m09:57:26.325779 [info ] [MainThread]: Running with dbt=1.9.4
-[0m09:57:26.326547 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/abrham/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init london_cycling_dbt', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
-[0m09:57:26.335850 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'PosixPath'.. Dictionary: {'dir': PosixPath('/home/abrham/.dbt')}
-[0m09:57:26.336685 [info ] [MainThread]: Creating dbt configuration folder at 
-[0m09:57:26.339394 [debug] [MainThread]: Starter project path: /home/abrham/Desktop/Datatalks/capstone project /london-cycling-active-travel-insights-data-pipeline/myenv/lib/python3.12/site-packages/dbt/include/starter_project
-[0m09:57:26.343439 [info ] [MainThread]: 
-Your new dbt project "london_cycling_dbt" was created!
+============================== 14:27:17.518427 | 2d3af196-947b-4792-bc16-ef27c05d6e46 ==============================
+[0m14:27:17.518427 [info ] [MainThread]: Running with dbt=1.9.4
+[0m14:27:17.519180 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/abrham/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init london_cycle_dbt', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:27:17.529263 [debug] [MainThread]: Starter project path: /home/abrham/Desktop/Datatalks/capstone project /london-cycling-active-travel-insights-data-pipeline/myenv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m14:27:17.533384 [info ] [MainThread]: 
+Your new dbt project "london_cycle_dbt" was created!
 
 For more information on how to configure the profiles.yml file,
 please consult the dbt documentation here:
@@ -23,10 +21,71 @@ Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
 
 Happy modeling!
 
-[0m09:57:26.344214 [info ] [MainThread]: Setting up your profile.
-[0m10:04:49.261067 [info ] [MainThread]: Profile london_cycling_dbt written to /home/abrham/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
-[0m10:04:49.262818 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 443.0196, "process_in_blocks": "0", "process_kernel_time": 0.34035, "process_mem_max_rss": "208016", "process_out_blocks": "80", "process_user_time": 2.775548}
-[0m10:04:49.263573 [debug] [MainThread]: Command `dbt init` succeeded at 10:04:49.263416 after 443.02 seconds
-[0m10:04:49.264158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9a648d280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9a654d160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cc9c06b7f80>]}
-[0m10:04:49.264817 [debug] [MainThread]: Flushing usage events
-[0m10:04:50.641192 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:27:17.534355 [info ] [MainThread]: Setting up your profile.
+[0m14:29:26.397447 [info ] [MainThread]: Profile london_cycle_dbt written to /home/abrham/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:29:26.404680 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 128.96915, "process_in_blocks": "0", "process_kernel_time": 0.322823, "process_mem_max_rss": "207772", "process_out_blocks": "80", "process_user_time": 3.047354}
+[0m14:29:26.408259 [debug] [MainThread]: Command `dbt init` succeeded at 14:29:26.407757 after 128.97 seconds
+[0m14:29:26.409670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388fe147620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388e859d2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388e82b93d0>]}
+[0m14:29:26.411256 [debug] [MainThread]: Flushing usage events
+[0m14:29:27.571370 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:29:33.887975 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f3751cf1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f374fbea20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f374eefe90>]}
+
+
+============================== 14:29:33.894029 | 81bbae14-a918-4a4c-911d-9b627d853b23 ==============================
+[0m14:29:33.894029 [info ] [MainThread]: Running with dbt=1.9.4
+[0m14:29:33.895172 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/abrham/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:29:33.905058 [info ] [MainThread]: dbt version: 1.9.4
+[0m14:29:33.906391 [info ] [MainThread]: python version: 3.12.3
+[0m14:29:33.907649 [info ] [MainThread]: python path: /home/abrham/Desktop/Datatalks/capstone project /london-cycling-active-travel-insights-data-pipeline/myenv/bin/python3
+[0m14:29:33.908345 [info ] [MainThread]: os info: Linux-6.11.0-21-generic-x86_64-with-glibc2.39
+[0m14:29:34.827758 [info ] [MainThread]: Using profiles dir at /home/abrham/.dbt
+[0m14:29:34.828460 [info ] [MainThread]: Using profiles.yml file at /home/abrham/.dbt/profiles.yml
+[0m14:29:34.829122 [info ] [MainThread]: Using dbt_project.yml file at /home/abrham/Desktop/Datatalks/capstone project /london-cycling-active-travel-insights-data-pipeline/dbt/dbt_project.yml
+[0m14:29:34.829682 [info ] [MainThread]: adapter type: bigquery
+[0m14:29:34.830189 [info ] [MainThread]: adapter version: 1.9.1
+[0m14:29:34.830733 [info ] [MainThread]: Configuration:
+[0m14:29:34.831280 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:29:34.831773 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:29:34.832308 [info ] [MainThread]: Required dependencies:
+[0m14:29:34.832846 [debug] [MainThread]: Executing "git --help"
+[0m14:29:34.835729 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:29:34.836410 [debug] [MainThread]: STDERR: "b''"
+[0m14:29:34.836830 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:29:34.837428 [info ] [MainThread]: Connection:
+[0m14:29:34.838023 [info ] [MainThread]:   method: service-account
+[0m14:29:34.838658 [info ] [MainThread]:   database: calm-armor-443511-g8
+[0m14:29:34.839360 [info ] [MainThread]:   execution_project: calm-armor-443511-g8
+[0m14:29:34.840083 [info ] [MainThread]:   schema: cycle_dataset
+[0m14:29:34.840952 [info ] [MainThread]:   location: US
+[0m14:29:34.842236 [info ] [MainThread]:   priority: interactive
+[0m14:29:34.843222 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m14:29:34.844032 [info ] [MainThread]:   impersonate_service_account: None
+[0m14:29:34.844653 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m14:29:34.845136 [info ] [MainThread]:   job_retries: 1
+[0m14:29:34.845615 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m14:29:34.846226 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m14:29:34.846801 [info ] [MainThread]:   timeout_seconds: 300
+[0m14:29:34.847576 [info ] [MainThread]:   client_id: None
+[0m14:29:34.848382 [info ] [MainThread]:   token_uri: None
+[0m14:29:34.849216 [info ] [MainThread]:   dataproc_region: None
+[0m14:29:34.850108 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m14:29:34.851962 [info ] [MainThread]:   gcs_bucket: None
+[0m14:29:34.852811 [info ] [MainThread]:   dataproc_batch: None
+[0m14:29:34.853821 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:29:35.054360 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m14:29:35.054883 [debug] [MainThread]: On debug: select 1 as id
+[0m14:29:35.055399 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:29:37.366274 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=calm-armor-443511-g8&j=bq:US:e4728801-005a-4073-beae-1222292e39d4&page=queryresults
+[0m14:29:38.596501 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:29:38.601077 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:29:38.604398 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/abrham/Desktop/Datatalks/capstone project /london-cycling-active-travel-insights-data-pipeline/dbt/dbt_project.yml> not found
+
+[0m14:29:38.612438 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 4.799558, "process_in_blocks": "0", "process_kernel_time": 0.385132, "process_mem_max_rss": "215100", "process_out_blocks": "16", "process_user_time": 3.3607}
+[0m14:29:38.617262 [debug] [MainThread]: Command `dbt debug` failed at 14:29:38.616330 after 4.81 seconds
+[0m14:29:38.619620 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:29:38.622434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f3751cf350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f35b293e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f374e7fd10>]}
+[0m14:29:38.624351 [debug] [MainThread]: Flushing usage events
+[0m14:29:39.758456 [debug] [MainThread]: An error was encountered while trying to flush usage events
