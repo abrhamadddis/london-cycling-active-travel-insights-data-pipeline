@@ -19,7 +19,8 @@ SELECT
   m.borough,
   m.functional_area,
   m.road_type,
-  m.strategic_panel
+  m.strategic_panel,
+  m.lat_lon,
 FROM {{ ref('stg_cycle_data') }} c
 LEFT JOIN {{ ref('stg_monitoring') }} m
   ON c.site_id = m.site_id
